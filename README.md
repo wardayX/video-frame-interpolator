@@ -1,7 +1,7 @@
 
 ---
 
-# 🎬 Video High-FPS Interpolator (RIFE)
+#  Video High-FPS Interpolator (RIFE)
 
 A production-ready Python tool that uses **RIFE (Real-Time Intermediate Flow Estimation)** to increase video frame rates using AI. Convert standard 24/30fps videos into ultra-smooth **60fps, 120fps, or even 240fps** slow-motion ready footage.
 
@@ -9,7 +9,7 @@ This project refactors the core RIFE algorithm into a clean, modular repository 
 
 ---
 
-## 🚀 Features
+##  Features
 
 * **Multi-Factor Interpolation:** Supports **2x**, **4x**, and **8x** frame multiplication.
 * **Recursive Inference:** Uses a smart "divide and conquer" strategy to generate high-order frames (e.g., converting 1 frame gap into 7 intermediate frames for 8x mode).
@@ -17,7 +17,7 @@ This project refactors the core RIFE algorithm into a clean, modular repository 
 * **Automated Setup:** The included setup script automatically fetches `IFNet_HDv3` weights and patches them for local compatibility.
 * **Docker Ready:** Includes a `Dockerfile` for isolated, conflict-free execution on any machine with NVIDIA drivers.
 
-## 📦 Installation
+##  Installation
 
 ### Option A: Local Python Setup
 
@@ -93,7 +93,7 @@ python main.py --input video.mp4 --output smooth_120fps.mp4 --multi 4 --crf 15
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 video-interpolator/
@@ -109,14 +109,14 @@ video-interpolator/
 
 ```
 
-## 🧠 How It Works
+##  How It Works
 
 1. **Flow Estimation:** The AI (IFNet) analyzes two consecutive frames () and predicts the motion (optical flow) between them.
 2. **Warping:** It warps  forward and  backward to meet in the middle.
 3. **Refinement:** A fusion network fixes artifacts and occlusions (areas visible in one frame but not the other) to generate the middle frame ().
 4. **Recursion:** For 4x interpolation, the script takes the new  and runs the process again with  to create , and so on.
 
-## 🤝 Credits
+##  Credits
 
 * **Original Algorithm:** [Practical-RIFE](https://github.com/hzwer/Practical-RIFE) by Hzwer.
 * **Model Weights:** Hosted by [Isi99999](https://www.google.com/search?q=https://huggingface.co/Isi99999).
